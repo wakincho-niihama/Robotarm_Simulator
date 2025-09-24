@@ -21,7 +21,7 @@ public class Twolinks_FK_Controller : MonoBehaviour
     private GameObject[] slider = new GameObject[2];
     private float[] sliderVal = new float[2];
     private GameObject[] angText = new GameObject[2];
-    private GameObject[] posText = new GameObject[2];
+    private GameObject[] posText = new GameObject[3];
 
     [Header("アームのリンク長設定")]
     public Armlinks upperarm;
@@ -48,6 +48,7 @@ public class Twolinks_FK_Controller : MonoBehaviour
         }
         posText[0] = GameObject.Find("Pos_X");
         posText[1] = GameObject.Find("Pos_Y");
+        //posText[2] = GameObject.Find("Pos_Z");
     }
 
     // Update is called once per frame
@@ -66,5 +67,6 @@ public class Twolinks_FK_Controller : MonoBehaviour
 
         posText[0].GetComponent<TextMeshProUGUI>().text = px.ToString("f2");
         posText[1].GetComponent<TextMeshProUGUI>().text = py.ToString("f2");
+        //posText[2].GetComponent<TextMeshProUGUI>().text = pz.ToString("f2");
     }
 }
