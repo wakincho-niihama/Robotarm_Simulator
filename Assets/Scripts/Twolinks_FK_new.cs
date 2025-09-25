@@ -2,20 +2,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-[System.Serializable]
-public class Armlinks
-{
-    public string name;
-    public float length;
-}
-
-public class Twolinks_FK_Controller : MonoBehaviour
+public class Twolinks_FK_new : MonoBehaviour
 {
     //robot
-    private GameObject[] joint = new GameObject[4];
+    private GameObject[] joint = new GameObject[5];
     private GameObject[] arm = new GameObject[2];
     private float[] ArmLength = new float[2];
-    private Vector3[] angle = new Vector3[4];
+    private Vector3[] angle = new Vector3[5];
 
     //UI
     private GameObject[] slider = new GameObject[5];
@@ -23,10 +16,7 @@ public class Twolinks_FK_Controller : MonoBehaviour
     private GameObject[] angText = new GameObject[5];
     private GameObject[] posText = new GameObject[3];
 
-    [Header("アームのリンク長設定")]
-    public Armlinks upper_arm;
-    public Armlinks lower_arm;
-
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         //robot
@@ -55,10 +45,10 @@ public class Twolinks_FK_Controller : MonoBehaviour
     void Update()
     {
         angle[0].z = sliderVal[0];
-        angle[0].x = sliderVal[1];
-        angle[1].y = sliderVal[2];
-        angle[2].z = sliderVal[3];
-        angle[3].y = sliderVal[4];
+        angle[1].x = sliderVal[1];
+        angle[2].y = sliderVal[2];
+        angle[3].z = sliderVal[3];
+        angle[4].y = sliderVal[4];
 
         for (int i = 0; i < slider.Length; i++)
         {
